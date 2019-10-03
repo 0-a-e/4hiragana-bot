@@ -7,9 +7,16 @@
 import random
 import tweepy
 
+
+auth = tweepy.OAuthHandler(CK, CS)
+auth.set_access_token(AT, AS)
+
+api = tweepy.API(auth)
+
 a = random.randint(ord('あ'),ord('ん'))
 b = random.randint(ord('あ'),ord('ん'))
 c = random.randint(ord('あ'),ord('ん'))
 d = random.randint(ord('あ'),ord('ん'))
 text = chr(a) + chr(b) + chr(c) + chr(d)
 print(text)
+api.update_status(text)
